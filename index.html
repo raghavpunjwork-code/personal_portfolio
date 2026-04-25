@@ -42,10 +42,6 @@ nav{
   backdrop-filter:blur(18px) saturate(1.8);
   -webkit-backdrop-filter:blur(18px) saturate(1.8);
   background:linear-gradient(135deg,rgba(29,78,216,0.18) 0%,rgba(59,130,246,0.10) 50%,rgba(29,78,216,0.16) 100%);
-<<<<<<< HEAD
-  border-bottom:1px solid rgba(29,78,216,0.18);
-=======
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
   box-shadow:0 1px 24px rgba(29,78,216,0.10),inset 0 1px 0 rgba(255,255,255,0.22);
 }
 .nav-logo{font-family:var(--font-display);font-size:1.5rem;font-weight:900;color:var(--ink);letter-spacing:-0.03em;}
@@ -94,11 +90,7 @@ nav{
   border:none;
   flex-shrink:0;
   opacity:0;
-<<<<<<< HEAD
-  animation:fadeUp 0.6s 0.2s forwards;
-=======
   animation:avatarReveal 0.8s 0.1s cubic-bezier(0.22,1,0.36,1) forwards;
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
   position:relative;
   background:transparent;
 }
@@ -109,8 +101,6 @@ nav{
   background:transparent;
   display:block;
   mix-blend-mode:multiply;
-<<<<<<< HEAD
-=======
   animation:avatarFloat 6s ease-in-out infinite 1s, avatarGlow 6s ease-in-out infinite 1s;
   transition:transform 0.4s ease;
 }
@@ -118,16 +108,11 @@ nav{
   animation-play-state:paused;
   transform:scale(1.03) translateY(-6px);
   filter:drop-shadow(0 12px 32px rgba(29,78,216,0.22)) brightness(1.05);
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
 }
 .hero-mid{display:flex;flex-direction:column;gap:0.7rem;opacity:0;animation:fadeUp 0.7s 0.35s forwards;padding-bottom:0.3rem;}
 .hero-greeting{font-family:var(--font-display);font-size:1.5rem;font-weight:400;color:var(--ink-mid);margin:0;letter-spacing:-0.01em;}
 .hero-name-big{font-family:var(--font-display);font-size:clamp(2.8rem,5vw,4.2rem);font-weight:900;color:var(--ink);margin:0;line-height:1.0;letter-spacing:-0.04em;margin-bottom:0.6rem;}
-<<<<<<< HEAD
-.hero-name-accent{color:var(--pop);}
-=======
 .hero-name-accent{color:var(--ink);}
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
 .hero-role-pill{
   display:inline-flex;align-items:center;gap:0.55rem;
   font-size:0.72rem;font-family:var(--font-mono);
@@ -173,11 +158,6 @@ nav{
 #logo-strip{
   position:relative;z-index:1;
   background:var(--bg-card);
-<<<<<<< HEAD
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-=======
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
   padding:1.8rem 4rem;
   overflow:hidden;
 }
@@ -213,11 +193,7 @@ nav{
 .section-title em{font-style:italic;font-weight:300;color:var(--ink-muted);}
 
 /* WORK */
-<<<<<<< HEAD
-#work-section{background:var(--bg);}
-=======
 #work-section{background:#EFF6FF;}
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
 .exp-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -232,11 +208,7 @@ nav{
   cursor:pointer;
   overflow:hidden;
   transition:transform 0.3s ease,border-color 0.3s ease,box-shadow 0.3s ease;
-<<<<<<< HEAD
-  display:flex;flex-direction:column;gap:0.9rem;
-=======
   display:flex;flex-direction:column;gap:0.9rem;padding-bottom:2.2rem;
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
 }
 .exp-tile::before{
   content:'';
@@ -367,34 +339,6 @@ nav{
   font-weight:500;
 }
 .exp-tile-expand{
-<<<<<<< HEAD
-  display:flex;align-items:center;justify-content:space-between;
-  padding-top:0.8rem;
-  border-top:1px solid var(--border);
-  margin-top:auto;
-}
-.exp-tile-expand-label{
-  font-family:var(--font-mono);
-  font-size:0.68rem;
-  letter-spacing:0.1em;
-  text-transform:uppercase;
-  color:var(--pop);
-  font-weight:600;
-}
-.exp-tile.open .exp-tile-expand-label::before{content:'Collapse ';}
-.exp-tile:not(.open) .exp-tile-expand-label::before{content:'Expand ';}
-.exp-tile-expand-icon{
-  width:26px;height:26px;
-  border-radius:50%;
-  background:var(--pop);
-  color:white;
-  display:flex;align-items:center;justify-content:center;
-  font-size:0.95rem;
-  font-weight:300;
-  transition:transform 0.3s ease;
-}
-.exp-tile.open .exp-tile-expand-icon{transform:rotate(45deg);}
-=======
   position:absolute;
   bottom:1.2rem;
   right:1.4rem;
@@ -406,7 +350,6 @@ nav{
 }
 .exp-tile:hover .exp-tile-chevron{color:var(--pop);}
 .exp-tile.open .exp-tile-chevron{transform:rotate(180deg);color:var(--pop);}
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
 .pill{padding:0.22rem 0.65rem;border:1px solid var(--border-strong);font-size:0.65rem;font-family:var(--font-mono);letter-spacing:0.06em;color:var(--ink-mid);background:var(--bg);border-radius:999px;}
 @media (max-width:780px){
   .exp-grid{grid-template-columns:1fr;}
@@ -414,21 +357,6 @@ nav{
 body.dark-mode .exp-tile{background:#131313;border-color:rgba(255,255,255,0.08);}
 
 /* SKILLS */
-<<<<<<< HEAD
-#skills-section{background:#1D4ED8;background-image:radial-gradient(circle at 15% 20%,rgba(255,255,255,0.06) 0%,transparent 50%),radial-gradient(circle at 85% 80%,rgba(255,255,255,0.04) 0%,transparent 50%);}
-#skills-section .section-title{color:white;}
-#skills-section .section-title em{color:rgba(255,255,255,0.38);}
-#skills-section .section-label{color:rgba(255,255,255,0.55);}
-#skills-section .section-label::before{background:rgba(255,255,255,0.45);}
-.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
-.skill-group{
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.18);
-  padding:1.8rem 1.6rem;
-  border-radius:20px;
-  backdrop-filter:blur(8px);
-  -webkit-backdrop-filter:blur(8px);
-=======
 #skills-section{background:var(--bg);}
 #skills-section .section-title{color:var(--ink);}
 #skills-section .section-title em{color:var(--ink-muted);}
@@ -440,26 +368,16 @@ body.dark-mode .exp-tile{background:#131313;border-color:rgba(255,255,255,0.08);
   border:1px solid var(--border);
   padding:1.8rem 1.6rem;
   border-radius:20px;
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
   transition:transform 0.25s ease,background 0.25s ease,border-color 0.25s ease,box-shadow 0.25s ease;
 }
 .skill-group:hover{
   transform:translateY(-3px);
-<<<<<<< HEAD
-  background:rgba(255,255,255,0.12);
-  border-color:rgba(255,255,255,0.3);
-  box-shadow:0 12px 32px rgba(0,0,0,0.15);
-}
-.skill-group-title{font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:white;margin-bottom:0.35rem;letter-spacing:-0.01em;}
-.skill-group-sub{font-size:0.68rem;font-family:var(--font-mono);color:rgba(255,255,255,0.5);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1.4rem;}
-=======
   background:var(--bg);
   border-color:var(--pop);
   box-shadow:0 12px 32px rgba(29,78,216,0.10);
 }
 .skill-group-title{font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:0.35rem;letter-spacing:-0.01em;}
 .skill-group-sub{font-size:0.68rem;font-family:var(--font-mono);color:var(--ink-muted);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1.4rem;}
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
 .skill-items{display:flex;flex-direction:column;gap:0.7rem;}
 .skill-item{display:flex;flex-direction:column;gap:0.3rem;}
 .skill-name-row{display:flex;justify-content:space-between;align-items:center;}
@@ -489,11 +407,7 @@ body.dark-mode .exp-tile{background:#131313;border-color:rgba(255,255,255,0.08);
 }
 
 /* PROJECTS */
-<<<<<<< HEAD
-#projects-section{background:var(--bg-alt);}
-=======
 #projects-section{background:#EFF6FF;}
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
 .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
 .project-card{background:var(--bg-card);border:1px solid var(--border);padding:1.6rem 1.5rem;display:flex;flex-direction:column;gap:1rem;cursor:pointer;position:relative;overflow:hidden;transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;}
 .project-card:hover{transform:translateY(-5px);border-color:var(--pop);box-shadow:0 14px 44px rgba(0,0,0,0.09);}
@@ -511,15 +425,9 @@ body.dark-mode .exp-tile{background:#131313;border-color:rgba(255,255,255,0.08);
 .project-arrow:hover{gap:0.75rem;}
 
 /* HOW I WORK */
-<<<<<<< HEAD
-#process-section{background:var(--bg);}
-.process-steps{display:grid;grid-template-columns:repeat(4,1fr);position:relative;}
-.process-step{padding:1.5rem 1.4rem;border:1px solid var(--border);background:var(--bg-card);display:flex;flex-direction:column;gap:0.9rem;transition:border-color 0.3s,transform 0.3s;}
-=======
 #process-section{background:#EFF6FF;}
 .process-steps{display:grid;grid-template-columns:repeat(4,1fr);position:relative;}
 .process-step{padding:1.5rem 1.4rem;border:1px solid var(--border);background:var(--bg-card);display:flex;flex-direction:column;gap:0.9rem;padding-bottom:2.2rem;transition:border-color 0.3s,transform 0.3s;}
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
 .process-step:not(:last-child){border-right:none;}
 .process-step:hover{border-color:var(--pop);transform:translateY(-3px);}
 .step-num{font-family:var(--font-display);font-size:2.8rem;font-weight:900;line-height:1;color:rgba(0,0,0,0.05);}
@@ -560,11 +468,7 @@ body.dark-mode .exp-tile{background:#131313;border-color:rgba(255,255,255,0.08);
 .cert-org{font-size:0.66rem;color:var(--ink-faint);font-family:var(--font-mono);letter-spacing:0.03em;}
 
 /* SOCIAL + CONTACT */
-<<<<<<< HEAD
-#social-section{background:var(--bg);}
-=======
 #social-section{background:#EFF6FF;}
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
 .social-grid-horiz{display:grid;grid-template-columns:repeat(5,1fr);gap:1.2rem;margin-top:0;}
 .social-card-h{
   display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -615,11 +519,7 @@ body.dark-mode .exp-tile{background:#131313;border-color:rgba(255,255,255,0.08);
 .social-card-h:hover .social-arrow-h{opacity:1;}
 
 /* CONTACT FORM */
-<<<<<<< HEAD
-.contact-form{display:flex;flex-direction:column;gap:0.9rem;}
-=======
 .contact-form{display:flex;flex-direction:column;gap:0.9rem;padding-bottom:2.2rem;}
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
 .form-group{display:flex;flex-direction:column;gap:0.35rem;}
 .form-label{font-size:0.7rem;font-family:var(--font-mono);letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-muted);}
@@ -636,8 +536,6 @@ footer .mark{font-family:var(--font-display);font-size:1.15rem;font-weight:900;c
 footer p{font-size:0.7rem;color:var(--ink-faint);letter-spacing:0.04em;}
 
 /* ANIMATIONS */
-<<<<<<< HEAD
-=======
 
 @keyframes avatarFloat{
   0%,100%{transform:translateY(0px);}
@@ -651,7 +549,6 @@ footer p{font-size:0.7rem;color:var(--ink-faint);letter-spacing:0.04em;}
   0%{opacity:0;transform:translateX(-30px) scale(0.97);}
   100%{opacity:1;transform:translateX(0) scale(1);}
 }
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 @keyframes scrollPulse{0%,100%{opacity:0.55;}50%{opacity:0.12;}}
@@ -745,11 +642,7 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
 </nav>
 
 <!-- HERO -->
-<<<<<<< HEAD
-<div style="position:relative;z-index:1;background:var(--bg);border-bottom:1px solid var(--border);">
-=======
 <div style="position:relative;z-index:1;background:var(--bg);">
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
 <div id="hero">
 
   <div class="hero-top">
@@ -768,11 +661,7 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
         Technical Product Manager
       </span>
       <p class="hero-about">
-<<<<<<< HEAD
-        Technical PM shipping AI products at <strong>enterprise scale</strong>. Currently at Optum building Copilot agents that cut workflow time by 80%. Hands-on with <strong>RAG pipelines, LLM tool-use, and agentic systems</strong> — not just the decks about them.
-=======
         Technical Product Manager managing enterprise-scale product lifecycles at Optum. While leading core product initiatives in a high-stakes healthcare environment, I am deeply focused on the future of <strong>Agentic AI</strong>. I build and experiment with <strong>RAG pipelines, LLM tool-use, and autonomous systems</strong> to understand how they can fundamentally bridge the gap between legacy workflows and AI-native efficiency.
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
         <br><br>
         <strong>MBA, IIM Kozhikode</strong> · Exchange at NHH Norway · 4+ years across healthcare, retail, and consulting.
       </p>
@@ -825,10 +714,6 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
 <div id="work-section">
 <div class="section-wrap tight-top">
   <div class="section-header reveal">
-<<<<<<< HEAD
-    <p class="section-label">01 / Career</p>
-=======
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
     <h2 class="section-title">Work <em>Experience</em></h2>
   </div>
   <div class="reveal reveal-d1">
@@ -840,20 +725,12 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
           <div class="exp-tile-logo-wrap">
             <img class="exp-tile-logo" src="https://logo.clearbit.com/optum.com" alt="Optum" onerror="this.parentElement.style.display='none'">
           </div>
-<<<<<<< HEAD
-          <span class="exp-tile-period">May 2025 — Jun 2026</span>
-=======
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
         </div>
         <div>
           <h3 class="exp-tile-company">UnitedHealth Group · Optum</h3>
           <p class="exp-tile-role">Technical Product Manager</p>
         </div>
         <span class="exp-tile-badge">Healthcare · AI/ML</span>
-<<<<<<< HEAD
-        <p class="exp-tile-tagline">"Shipping AI-native products to 3M+ users at enterprise scale."</p>
-=======
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
         <div class="exp-tile-details">
           <p class="exp-tile-desc">Led Optum's Home Page migration onto a unified One Portal architecture as Lead Product Owner (SAFe), driving a 100+ feature backlog across an 18-engineer squad.</p>
           <ul class="exp-achievements">
@@ -867,14 +744,7 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
             <span class="pill">Agentic AI</span><span class="pill">SAFe / Agile</span><span class="pill">LLM Integration</span><span class="pill">RAG Pipelines</span><span class="pill">LangSmith</span><span class="pill">Microservices</span>
           </div>
         </div>
-<<<<<<< HEAD
-        <div class="exp-tile-expand">
-          <span class="exp-tile-expand-label"></span>
-          <span class="exp-tile-expand-icon">+</span>
-        </div>
-=======
         <div class="exp-tile-expand"><svg class="exp-tile-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
       </div>
 
       <!-- Tile 2: Target -->
@@ -883,20 +753,12 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
           <div class="exp-tile-logo-wrap">
             <img class="exp-tile-logo" src="https://logo.clearbit.com/target.com" alt="Target" onerror="this.parentElement.style.display='none'">
           </div>
-<<<<<<< HEAD
-          <span class="exp-tile-period">Jan 2023 — Jun 2023</span>
-=======
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
         </div>
         <div>
           <h3 class="exp-tile-company">Target Corporation</h3>
           <p class="exp-tile-role">Analyst — Operational Insights, GSCL</p>
         </div>
         <span class="exp-tile-badge">Retail · Supply Chain</span>
-<<<<<<< HEAD
-        <p class="exp-tile-tagline">"Turning supply chain noise into decisions leaders actually use."</p>
-=======
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
         <div class="exp-tile-details">
           <p class="exp-tile-desc">Spotted visibility gaps inside Target's Global Supply Chain &amp; Logistics org and independently shipped the dashboards, automation scripts, and analytical frameworks to close them.</p>
           <ul class="exp-achievements">
@@ -909,14 +771,7 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
             <span class="pill">Tableau</span><span class="pill">SQL</span><span class="pill">Python</span><span class="pill">Supply Chain Analytics</span><span class="pill">OMS</span>
           </div>
         </div>
-<<<<<<< HEAD
-        <div class="exp-tile-expand">
-          <span class="exp-tile-expand-label"></span>
-          <span class="exp-tile-expand-icon">+</span>
-        </div>
-=======
         <div class="exp-tile-expand"><svg class="exp-tile-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
       </div>
 
       <!-- Tile 3: Deloitte -->
@@ -925,20 +780,12 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
           <div class="exp-tile-logo-wrap">
             <img class="exp-tile-logo" src="https://logo.clearbit.com/deloitte.com" alt="Deloitte" onerror="this.parentElement.style.display='none'">
           </div>
-<<<<<<< HEAD
-          <span class="exp-tile-period">May 2021 — Dec 2022</span>
-=======
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
         </div>
         <div>
           <h3 class="exp-tile-company">Deloitte Consulting</h3>
           <p class="exp-tile-role">Associate Analyst — SAP Developer</p>
         </div>
         <span class="exp-tile-badge">Consulting · SAP</span>
-<<<<<<< HEAD
-        <p class="exp-tile-tagline">"SAP transformations that ship on time, with zero defect Go-Lives."</p>
-=======
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
         <div class="exp-tile-details">
           <p class="exp-tile-desc">Built and integrated SAP S/4 HANA solutions for enterprise clients — optimising workflows, clearing critical Go-Live defects, and mining customer data for revenue nobody had spotted yet.</p>
           <ul class="exp-achievements">
@@ -953,14 +800,7 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
             <span class="pill">SAP S/4 HANA</span><span class="pill">REST APIs</span><span class="pill">Data Pipelines</span><span class="pill">Enterprise Tech</span>
           </div>
         </div>
-<<<<<<< HEAD
-        <div class="exp-tile-expand">
-          <span class="exp-tile-expand-label"></span>
-          <span class="exp-tile-expand-icon">+</span>
-        </div>
-=======
         <div class="exp-tile-expand"><svg class="exp-tile-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
       </div>
 
       <!-- Tile 4: Diageo -->
@@ -969,20 +809,12 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
           <div class="exp-tile-logo-wrap">
             <img class="exp-tile-logo" src="https://logo.clearbit.com/diageo.com" alt="Diageo" onerror="this.parentElement.style.display='none'">
           </div>
-<<<<<<< HEAD
-          <span class="exp-tile-period">Apr 2024 — May 2024</span>
-=======
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
         </div>
         <div>
           <h3 class="exp-tile-company">Diageo</h3>
           <p class="exp-tile-role">MBA Intern — Distilled Supply Chain</p>
         </div>
         <span class="exp-tile-badge">FMCG · Supply Chain</span>
-<<<<<<< HEAD
-        <p class="exp-tile-tagline">"Packaging innovation, sustainability, and vendor onboarding at global FMCG scale."</p>
-=======
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
         <div class="exp-tile-details">
           <p class="exp-tile-desc">Joined Diageo's Distilled Supply Chain team as an MBA Intern, driving packaging innovation and sustainability initiatives across the Supply Road Show programme.</p>
           <ul class="exp-achievements">
@@ -994,14 +826,7 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
             <span class="pill">RFID</span><span class="pill">Supply Chain</span><span class="pill">Sustainability</span><span class="pill">LCA</span><span class="pill">Vendor Management</span>
           </div>
         </div>
-<<<<<<< HEAD
-        <div class="exp-tile-expand">
-          <span class="exp-tile-expand-label"></span>
-          <span class="exp-tile-expand-icon">+</span>
-        </div>
-=======
         <div class="exp-tile-expand"><svg class="exp-tile-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
       </div>
 
     </div>
@@ -1013,10 +838,6 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
 <div id="skills-section">
 <div class="section-wrap">
   <div class="section-header reveal">
-<<<<<<< HEAD
-    <p class="section-label">02 / Toolkit</p>
-=======
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
     <h2 class="section-title">Skills & <em>Tools</em></h2>
   </div>
   <div class="skills-grid">
@@ -1076,10 +897,6 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
 <div id="projects-section">
 <div class="section-wrap">
   <div class="section-header reveal">
-<<<<<<< HEAD
-    <p class="section-label">03 / Portfolio</p>
-=======
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
     <h2 class="section-title">Things I've <em>Actually Shipped</em></h2>
   </div>
   <div class="projects-grid">
@@ -1121,10 +938,6 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
 <div id="edu-section">
 <div class="section-wrap">
   <div class="section-header reveal">
-<<<<<<< HEAD
-    <p class="section-label">05 / Learning</p>
-=======
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
     <h2 class="section-title">Education & <em>Certifications</em></h2>
   </div>
   <div class="edu-layout">
@@ -1163,10 +976,6 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
 <div id="social-section">
 <div class="section-wrap">
   <div class="section-header reveal">
-<<<<<<< HEAD
-    <p class="section-label">06 / Connect</p>
-=======
->>>>>>> 2b9fa01 (Add raghav_portfolio_final.html)
     <h2 class="section-title">Let's <em>Talk</em></h2>
   </div>
 
