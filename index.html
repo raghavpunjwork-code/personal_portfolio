@@ -216,20 +216,8 @@ nav{
   position:relative;
   padding-bottom:2.5rem;
 }
-.exp-timeline-track{
-  position:absolute;
-  bottom:0;left:0;right:0;
-  height:3px;
-  background:var(--border);
-  border-radius:999px;
-  overflow:hidden;
-}
-.exp-timeline-track-fill{
-  height:100%;
-  background:linear-gradient(90deg,var(--pop),#818cf8);
-  border-radius:999px;
-  width:100%;
-}
+
+
 .exp-grid{
   display:flex;
   align-items:flex-start;
@@ -241,39 +229,11 @@ nav{
   scrollbar-width:none;
 }
 .exp-grid::-webkit-scrollbar{display:none;}
-.exp-timeline-dots{
-  display:flex;
-  gap:1.25rem;
-  padding:0 0 0.5rem 0;
-  overflow-x:auto;
-  scrollbar-width:none;
-  pointer-events:none;
-}
-.exp-timeline-dots::-webkit-scrollbar{display:none;}
-.exp-timeline-dot-item{
-  flex:0 0 340px;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:0.3rem;
-}
-.exp-timeline-dot{
-  width:12px;height:12px;
-  background:var(--pop);
-  border-radius:50%;
-  border:2px solid white;
-  box-shadow:0 0 0 2px var(--pop);
-  margin-left:1.75rem;
-}
-.exp-timeline-date{
-  font-family:var(--font-mono);
-  font-size:0.62rem;
-  letter-spacing:0.08em;
-  color:var(--pop);
-  text-transform:uppercase;
-  font-weight:600;
-  padding-left:0.25rem;
-}
+
+
+
+
+
 .exp-tile{
   position:relative;
   background:var(--bg);
@@ -436,7 +396,7 @@ nav{
 .pill{padding:0.22rem 0.65rem;border:1px solid var(--border-strong);font-size:0.65rem;font-family:var(--font-mono);letter-spacing:0.06em;color:var(--ink-mid);background:var(--bg);border-radius:999px;}
 @media (max-width:780px){
   .exp-grid .exp-tile{flex:0 0 85vw;}
-  .exp-timeline-dot-item{flex:0 0 85vw;}
+  
 }
 body.dark-mode .exp-tile{background:#131313;border-color:rgba(255,255,255,0.08);}
 
@@ -869,7 +829,8 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
       <div class="exp-tile" data-exp-tile>
         <div class="exp-tile-header">
           <div class="exp-tile-logo-wrap">
-            <img class="exp-tile-logo" src="https://logo.clearbit.com/deloitte.com" alt="Deloitte" onerror="this.parentElement.style.display='none'">
+            <img class="exp-tile-logo" src="https://logo.clearbit.com/deloitte.com" alt="Deloitte" onerror="this.style.display='none';this.parentElement.querySelector('.exp-tile-initial').style.display='flex'">
+            <span class="exp-tile-initial" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:1rem;color:var(--pop);">DL</span>
           </div>
           <span class="exp-tile-period">May 2021 – Dec 2022</span>
         </div>
@@ -899,7 +860,8 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
       <div class="exp-tile" data-exp-tile>
         <div class="exp-tile-header">
           <div class="exp-tile-logo-wrap">
-            <img class="exp-tile-logo" src="https://logo.clearbit.com/target.com" alt="Target" onerror="this.parentElement.style.display='none'">
+            <img class="exp-tile-logo" src="https://logo.clearbit.com/target.com" alt="Target" onerror="this.style.display='none';this.parentElement.querySelector('.exp-tile-initial').style.display='flex'">
+            <span class="exp-tile-initial" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:1rem;color:var(--pop);">T</span>
           </div>
           <span class="exp-tile-period">Jan 2023 – Jun 2023</span>
         </div>
@@ -927,7 +889,8 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
       <div class="exp-tile" data-exp-tile>
         <div class="exp-tile-header">
           <div class="exp-tile-logo-wrap">
-            <img class="exp-tile-logo" src="https://logo.clearbit.com/diageo.com" alt="Diageo" onerror="this.parentElement.style.display='none'">
+            <img class="exp-tile-logo" src="https://logo.clearbit.com/diageo.com" alt="Diageo" onerror="this.style.display='none';this.parentElement.querySelector('.exp-tile-initial').style.display='flex'">
+            <span class="exp-tile-initial" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:1rem;color:var(--pop);">D</span>
           </div>
           <span class="exp-tile-period">May 2024 – Jun 2024</span>
         </div>
@@ -954,7 +917,8 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
       <div class="exp-tile" data-exp-tile>
         <div class="exp-tile-header">
           <div class="exp-tile-logo-wrap">
-            <img class="exp-tile-logo" src="https://logo.clearbit.com/optum.com" alt="Optum" onerror="this.parentElement.style.display='none'">
+            <img class="exp-tile-logo" src="https://logo.clearbit.com/optum.com" alt="Optum" onerror="this.style.display='none';this.parentElement.querySelector('.exp-tile-initial').style.display='flex'">
+            <span class="exp-tile-initial" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:1rem;color:var(--pop);">O</span>
           </div>
           <span class="exp-tile-period">May 2025 – Present</span>
         </div>
@@ -980,25 +944,6 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
       </div>
 
     </div><!-- end exp-grid -->
-    <div class="exp-timeline-dots">
-      <div class="exp-timeline-dot-item">
-        <div class="exp-timeline-dot"></div>
-        <span class="exp-timeline-date">May 2021 – Dec 2022</span>
-      </div>
-      <div class="exp-timeline-dot-item">
-        <div class="exp-timeline-dot"></div>
-        <span class="exp-timeline-date">Jan 2023 – Jun 2023</span>
-      </div>
-      <div class="exp-timeline-dot-item">
-        <div class="exp-timeline-dot"></div>
-        <span class="exp-timeline-date">May 2024 – Jun 2024</span>
-      </div>
-      <div class="exp-timeline-dot-item">
-        <div class="exp-timeline-dot"></div>
-        <span class="exp-timeline-date">May 2025 – Present</span>
-      </div>
-    </div>
-    <div class="exp-timeline-track"><div class="exp-timeline-track-fill"></div></div>
     </div><!-- end exp-timeline-wrap -->
   </div>
 </div>
