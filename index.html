@@ -318,7 +318,7 @@ nav{
 .exp-tile-details{
   max-height:0;
   overflow:hidden;
-  transition:max-height 0.5s ease,opacity 0.35s ease,margin-top 0.35s ease;
+  transition:max-height 0.55s cubic-bezier(0.4,0,0.2,1),opacity 0.4s ease,margin-top 0.35s ease;
   opacity:0;
 }
 .exp-tile.open .exp-tile-details{
@@ -356,6 +356,27 @@ nav{
   position:absolute;left:0;top:0;
   color:var(--pop);
   font-weight:700;
+}
+@keyframes fadeSlideIn{
+  from{opacity:0;transform:translateX(-10px);}
+  to{opacity:1;transform:translateX(0);}
+}
+.exp-tile.open .exp-tile-desc{
+  animation:fadeSlideIn 0.35s ease forwards;
+}
+.exp-tile.open .exp-achievements li{
+  opacity:0;
+  animation:fadeSlideIn 0.35s ease forwards;
+}
+.exp-tile.open .exp-achievements li:nth-child(1){animation-delay:0.05s;}
+.exp-tile.open .exp-achievements li:nth-child(2){animation-delay:0.12s;}
+.exp-tile.open .exp-achievements li:nth-child(3){animation-delay:0.19s;}
+.exp-tile.open .exp-achievements li:nth-child(4){animation-delay:0.26s;}
+.exp-tile.open .exp-achievements li:nth-child(5){animation-delay:0.33s;}
+.exp-tile.open .exp-achievements li:nth-child(6){animation-delay:0.40s;}
+.exp-tile.open .exp-tile-pills{
+  animation:fadeSlideIn 0.35s 0.45s ease forwards;
+  opacity:0;
 }
 .exp-tile-pills{display:flex;flex-wrap:wrap;gap:0.35rem;}
 .exp-tile-pills .pill{
@@ -712,6 +733,29 @@ body.dark-mode footer{background:#111;}
 .theme-toggle:hover{border-color:var(--pop);color:var(--pop);}
 .theme-toggle-icon{font-size:0.85rem;transition:transform 0.4s;}
 body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0.5);}
+  50%{box-shadow:0 0 0 6px rgba(34,197,94,0);}
+}
+.active-dot{
+  display:inline-block;
+  width:8px;height:8px;
+  background:#22c55e;
+  border-radius:50%;
+  margin-right:6px;
+  animation:pulse 1.8s infinite;
+  vertical-align:middle;
+  position:relative;top:-1px;
+}
+/* Company tints */
+[data-company="uhg"]{background:linear-gradient(145deg,rgba(0,38,119,0.04) 0%,var(--bg) 60%);}
+[data-company="diageo"]{background:linear-gradient(145deg,rgba(180,20,20,0.04) 0%,var(--bg) 60%);}
+[data-company="target"]{background:linear-gradient(145deg,rgba(204,0,0,0.04) 0%,var(--bg) 60%);}
+[data-company="deloitte"]{background:linear-gradient(145deg,rgba(134,188,37,0.05) 0%,var(--bg) 60%);}
+[data-company="uhg"]:hover{border-color:rgba(0,38,119,0.3);}
+[data-company="diageo"]:hover{border-color:rgba(180,20,20,0.3);}
+[data-company="target"]:hover{border-color:rgba(204,0,0,0.3);}
+[data-company="deloitte"]:hover{border-color:rgba(134,188,37,0.4);}
 </style>
 </head>
 <body>
@@ -810,9 +854,9 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
     <div class="exp-grid" id="expGrid">
 
       <!-- Tile 1: UHG Optum -->
-      <div class="exp-tile" data-exp-tile>
+      <div class="exp-tile" data-exp-tile data-company="uhg">
         <div class="exp-tile-header">
-          <span class="exp-tile-period">May 2025 – Present</span>
+          <span class="exp-tile-period"><span class="active-dot"></span>May 2025 – Present</span>
         </div>
         <div>
           <h3 class="exp-tile-company">UHG · Optum</h3>
@@ -836,7 +880,7 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
       </div>
 
       <!-- Tile 2: Diageo -->
-      <div class="exp-tile" data-exp-tile>
+      <div class="exp-tile" data-exp-tile data-company="diageo">
         <div class="exp-tile-header">
           <span class="exp-tile-period">May 2024 – Jun 2024</span>
         </div>
@@ -860,7 +904,7 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
       </div>
 
       <!-- Tile 3: Target -->
-      <div class="exp-tile" data-exp-tile>
+      <div class="exp-tile" data-exp-tile data-company="target">
         <div class="exp-tile-header">
           <span class="exp-tile-period">Jan 2023 – Jun 2023</span>
         </div>
@@ -885,7 +929,7 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
       </div>
 
       <!-- Tile 4: Deloitte -->
-      <div class="exp-tile" data-exp-tile>
+      <div class="exp-tile" data-exp-tile data-company="deloitte">
         <div class="exp-tile-header">
           <span class="exp-tile-period">May 2021 – Dec 2022</span>
         </div>
