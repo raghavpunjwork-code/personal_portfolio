@@ -193,28 +193,31 @@ nav{
 .section-title em{font-style:italic;font-weight:300;color:var(--ink-muted);}
 
 /* WORK */
-#work-section{background:#EFF6FF;padding-bottom:0.5rem;}
+#work-section{background:#EFF6FF;padding-bottom:0;}
 .exp-carousel-nav{
   display:flex;
   justify-content:center;
-  gap:0.75rem;
-  margin-top:1.25rem;
+  gap:0.6rem;
+  margin-top:1rem;
 }
 .exp-nav-btn{
-  width:36px;height:36px;
-  border-radius:50%;
-  border:1.5px solid var(--border-strong);
-  background:var(--bg);
-  color:var(--ink);
-  font-size:1rem;
+  width:44px;height:44px;
+  border-radius:12px;
+  border:none;
+  background:var(--pop);
+  color:white;
+  font-size:1.1rem;
   cursor:pointer;
   display:flex;align-items:center;justify-content:center;
-  transition:background 0.2s,border-color 0.2s,color 0.2s;
+  box-shadow:0 4px 14px rgba(29,78,216,0.25);
+  transition:transform 0.18s ease,box-shadow 0.18s ease,background 0.18s;
+  font-weight:600;
 }
-.exp-nav-btn:hover{background:var(--pop);border-color:var(--pop);color:white;}
+.exp-nav-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(29,78,216,0.35);}
+.exp-nav-btn:active{transform:translateY(0);box-shadow:0 2px 8px rgba(29,78,216,0.2);}
 .exp-timeline-wrap{
   position:relative;
-  padding-bottom:2.5rem;
+  padding-bottom:0;
 }
 
 
@@ -845,7 +848,7 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
 
 <!-- WORK EXPERIENCE -->
 <div id="work-section">
-<div class="section-wrap tight-top">
+<div class="section-wrap tight-top" style="padding-bottom:1.5rem;">
   <div class="section-header reveal">
     <h2 class="section-title">Work <em>Experience</em></h2>
   </div>
