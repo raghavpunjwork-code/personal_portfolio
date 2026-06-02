@@ -194,10 +194,66 @@ nav{
 
 /* WORK */
 #work-section{background:#EFF6FF;}
+.exp-timeline-wrap{
+  position:relative;
+  padding-bottom:2.5rem;
+}
+.exp-timeline-track{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:3px;
+  background:var(--border);
+  border-radius:999px;
+  overflow:hidden;
+}
+.exp-timeline-track-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--pop),#818cf8);
+  border-radius:999px;
+  width:100%;
+}
 .exp-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
+  display:flex;
   gap:1.25rem;
+  overflow-x:auto;
+  padding-bottom:1.5rem;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.exp-grid::-webkit-scrollbar{display:none;}
+.exp-timeline-dots{
+  display:flex;
+  gap:1.25rem;
+  padding:0 0 0.5rem 0;
+  overflow-x:auto;
+  scrollbar-width:none;
+  pointer-events:none;
+}
+.exp-timeline-dots::-webkit-scrollbar{display:none;}
+.exp-timeline-dot-item{
+  flex:0 0 340px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:0.3rem;
+}
+.exp-timeline-dot{
+  width:12px;height:12px;
+  background:var(--pop);
+  border-radius:50%;
+  border:2px solid white;
+  box-shadow:0 0 0 2px var(--pop);
+  margin-left:1.75rem;
+}
+.exp-timeline-date{
+  font-family:var(--font-mono);
+  font-size:0.62rem;
+  letter-spacing:0.08em;
+  color:var(--pop);
+  text-transform:uppercase;
+  font-weight:600;
+  padding-left:0.25rem;
 }
 .exp-tile{
   position:relative;
@@ -209,6 +265,8 @@ nav{
   overflow:hidden;
   transition:transform 0.3s ease,border-color 0.3s ease,box-shadow 0.3s ease;
   display:flex;flex-direction:column;gap:0.9rem;padding-bottom:2.2rem;
+  flex:0 0 340px;
+  scroll-snap-align:start;
 }
 .exp-tile::before{
   content:'';
@@ -352,7 +410,8 @@ nav{
 .exp-tile.open .exp-tile-chevron{transform:rotate(180deg);color:var(--pop);}
 .pill{padding:0.22rem 0.65rem;border:1px solid var(--border-strong);font-size:0.65rem;font-family:var(--font-mono);letter-spacing:0.06em;color:var(--ink-mid);background:var(--bg);border-radius:999px;}
 @media (max-width:780px){
-  .exp-grid{grid-template-columns:1fr;}
+  .exp-grid .exp-tile{flex:0 0 85vw;}
+  .exp-timeline-dot-item{flex:0 0 85vw;}
 }
 body.dark-mode .exp-tile{background:#131313;border-color:rgba(255,255,255,0.08);}
 
@@ -774,6 +833,7 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
     <h2 class="section-title">Work <em>Experience</em></h2>
   </div>
   <div class="reveal reveal-d1">
+    <div class="exp-timeline-wrap">
     <div class="exp-grid">
 
       <!-- Tile 1: UHG Optum -->
@@ -782,6 +842,7 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
           <div class="exp-tile-logo-wrap">
             <img class="exp-tile-logo" src="https://logo.clearbit.com/optum.com" alt="Optum" onerror="this.parentElement.style.display='none'">
           </div>
+          <span class="exp-tile-period">May 2025 – Present</span>
         </div>
         <div>
           <h3 class="exp-tile-company">UnitedHealth Group · Optum</h3>
@@ -810,6 +871,7 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
           <div class="exp-tile-logo-wrap">
             <img class="exp-tile-logo" src="https://logo.clearbit.com/target.com" alt="Target" onerror="this.parentElement.style.display='none'">
           </div>
+          <span class="exp-tile-period">Jan 2023 – Jun 2023</span>
         </div>
         <div>
           <h3 class="exp-tile-company">Target Corporation</h3>
@@ -837,6 +899,7 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
           <div class="exp-tile-logo-wrap">
             <img class="exp-tile-logo" src="https://logo.clearbit.com/deloitte.com" alt="Deloitte" onerror="this.parentElement.style.display='none'">
           </div>
+          <span class="exp-tile-period">May 2021 – Dec 2022</span>
         </div>
         <div>
           <h3 class="exp-tile-company">Deloitte Consulting</h3>
@@ -866,6 +929,7 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
           <div class="exp-tile-logo-wrap">
             <img class="exp-tile-logo" src="https://logo.clearbit.com/diageo.com" alt="Diageo" onerror="this.parentElement.style.display='none'">
           </div>
+          <span class="exp-tile-period">May 2024 – Jun 2024</span>
         </div>
         <div>
           <h3 class="exp-tile-company">Diageo</h3>
@@ -886,7 +950,27 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
         <div class="exp-tile-expand"><svg class="exp-tile-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
       </div>
 
+    </div><!-- end exp-grid -->
+    <div class="exp-timeline-dots">
+      <div class="exp-timeline-dot-item">
+        <div class="exp-timeline-dot"></div>
+        <span class="exp-timeline-date">May 2025 – Present</span>
+      </div>
+      <div class="exp-timeline-dot-item">
+        <div class="exp-timeline-dot"></div>
+        <span class="exp-timeline-date">Jan 2023 – Jun 2023</span>
+      </div>
+      <div class="exp-timeline-dot-item">
+        <div class="exp-timeline-dot"></div>
+        <span class="exp-timeline-date">May 2021 – Dec 2022</span>
+      </div>
+      <div class="exp-timeline-dot-item">
+        <div class="exp-timeline-dot"></div>
+        <span class="exp-timeline-date">May 2024 – Jun 2024</span>
+      </div>
     </div>
+    <div class="exp-timeline-track"><div class="exp-timeline-track-fill"></div></div>
+    </div><!-- end exp-timeline-wrap -->
   </div>
 </div>
 </div>
@@ -1204,7 +1288,7 @@ function loop(){
   for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const dx=nodes[i].x-nodes[j].x,dy=nodes[i].y-nodes[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<125){ctx.globalAlpha=(1-d/125)*0.08;ctx.strokeStyle='#1D4ED8';ctx.lineWidth=0.55;ctx.beginPath();ctx.moveTo(nodes[i].x,nodes[i].y);ctx.lineTo(nodes[j].x,nodes[j].y);ctx.stroke();}}
   ctx.globalAlpha=0.16;ctx.fillStyle='#1D4ED8';
   nodes.forEach(n=>{n.update();ctx.beginPath();ctx.arc(n.x,n.y,1.1,0,Math.PI*2);ctx.fill();});
-  ctx.globalAlpha=1;
+  lpha=1;
   const scanY=((frame*0.28)%(H+200))-100;
   const sg=ctx.createLinearGradient(0,scanY-35,0,scanY+35);sg.addColorStop(0,'rgba(29,78,216,0)');sg.addColorStop(0.5,'rgba(29,78,216,0.016)');sg.addColorStop(1,'rgba(29,78,216,0)');
   ctx.fillStyle=sg;ctx.fillRect(0,scanY-35,W,70);
@@ -1215,11 +1299,19 @@ loop();
 // EXPERIENCE TILES — expand/collapse
 document.querySelectorAll('[data-exp-tile]').forEach(tile=>{
   tile.addEventListener('click',(e)=>{
-    // don't toggle if user clicked a link inside
     if(e.target.tagName==='A') return;
     tile.classList.toggle('open');
   });
 });
+
+// SCROLL SYNC — timeline dots follow grid scroll
+const expGrid = document.querySelector('.exp-grid');
+const expDots = document.querySelector('.exp-timeline-dots');
+if(expGrid && expDots){
+  expGrid.addEventListener('scroll', () => {
+    expDots.scrollLeft = expGrid.scrollLeft;
+  });
+}
 
 // SCROLL REVEAL + SKILL BARS
 const revealObs=new IntersectionObserver(entries=>{
@@ -1238,7 +1330,7 @@ function submitForm(){
   document.getElementById('formSuccess').style.display='block';
 }
 
-// RESUME DOWNLOAD — replace with your real PDF URL
+// RESUME DOWNLOAD
 function downloadResume(){
   alert('To enable this: upload your PDF resume to Google Drive or Dropbox, make it public, then replace this function with:\nwindow.open("YOUR_PDF_URL", "_blank")');
 }
