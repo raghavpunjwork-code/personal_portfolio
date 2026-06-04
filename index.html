@@ -829,8 +829,8 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
 
 /* Bets */
 .td-bets{display:flex;flex-direction:column;gap:0.75rem;margin-bottom:3rem;}
-.td-bet{display:flex;gap:1rem;align-items:flex-start;padding:1rem 1.25rem;border:1px solid rgba(255,255,255,0.06);border-radius:12px;background:rgba(255,255,255,0.03);}
-.td-bet-icon{font-size:1.1rem;flex-shrink:0;margin-top:0.1rem;}
+.td-bet{display:flex;gap:0;align-items:flex-start;padding:1rem 1.25rem;border:1px solid rgba(255,255,255,0.06);border-radius:12px;background:rgba(255,255,255,0.03);}
+
 .td-bet h4{font-size:0.85rem;font-weight:600;color:#e2e8f0;margin-bottom:0.2rem;}
 .td-bet p{font-size:0.78rem;color:#64748b;line-height:1.55;}
 
@@ -840,26 +840,76 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
 .td-close strong{color:#F0F4FF;font-style:normal;font-weight:700;}
 
 
+
+
+
 /* ── TEARDOWN CARDS ───────────────────────────────────────────────────────── */
 #teardown-section{background:#F5F7FF;}
 #teardown-section .section-title{color:var(--ink);}
 #teardown-section .section-title em{color:var(--ink-muted);}
-.td-card{border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--bg);margin-top:1.5rem;transition:box-shadow 0.3s,border-color 0.3s;}
-.td-card:hover{box-shadow:0 8px 32px rgba(29,78,216,0.10);border-color:var(--pop);}
-.td-card-header{padding:2rem 2.25rem 1.75rem;cursor:pointer;user-select:none;}
-.td-card-meta{display:flex;align-items:center;gap:1rem;margin-bottom:0.75rem;}
-.td-card-tag{font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--pop);font-weight:600;}
-.td-card-date{font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.08em;color:var(--ink-faint);}
-.td-card-title{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:900;letter-spacing:-0.02em;color:var(--ink);line-height:1.1;margin-bottom:0.6rem;}
-.td-card-desc{font-size:0.88rem;color:var(--ink-mid);line-height:1.65;max-width:680px;}
-.td-card-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:1.25rem;}
-.td-card-chips{display:flex;flex-wrap:wrap;gap:0.4rem;}
-.td-chip-sm{display:inline-block;padding:0.2rem 0.65rem;border-radius:999px;font-size:0.63rem;font-family:var(--font-mono);letter-spacing:0.06em;background:var(--pop-light);color:var(--pop);font-weight:500;}
-.td-expand-btn{font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--pop);background:none;border:1.5px solid var(--pop);padding:0.4rem 1rem;border-radius:999px;cursor:pointer;transition:background 0.2s,color 0.2s;white-space:nowrap;}
-.td-expand-btn:hover,.td-card.open .td-expand-btn{background:var(--pop);color:white;}
-.td-card-body{max-height:0;overflow:hidden;transition:max-height 0.7s cubic-bezier(0.4,0,0.2,1);}
+
+.td-card{
+  border-radius:24px;overflow:hidden;margin-top:1.75rem;
+  cursor:pointer;
+  background:#0A0F1E;
+  transition:transform 0.3s ease,box-shadow 0.3s ease;
+  position:relative;
+}
+.td-card:hover{transform:translateY(-3px);box-shadow:0 20px 60px rgba(10,15,30,0.25);}
+.td-card-header{
+  display:grid;
+  grid-template-columns:1fr 280px;
+  min-height:220px;
+  user-select:none;
+}
+@media(max-width:820px){.td-card-header{grid-template-columns:1fr;}}
+
+/* Left pane */
+.td-card-left{
+  padding:2.25rem 2.5rem;
+  display:flex;flex-direction:column;justify-content:space-between;
+  border-right:1px solid rgba(255,255,255,0.06);
+}
+.td-card-meta{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;}
+.td-card-tag{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:#60a5fa;font-weight:600;}
+.td-card-date{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.08em;color:#475569;}
+.td-card-read{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.08em;color:#475569;}
+.td-card-title{
+  font-family:var(--font-display);
+  font-size:clamp(1.5rem,3vw,2.2rem);
+  font-weight:900;letter-spacing:-0.03em;
+  color:#F0F4FF;line-height:1.05;margin-bottom:0.75rem;
+}
+.td-card-desc{font-size:0.85rem;color:#94a3b8;line-height:1.7;max-width:540px;}
+.td-card-footer-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;margin-top:1.5rem;}
+.td-card-chips{display:flex;flex-wrap:wrap;gap:0.35rem;}
+.td-chip-sm{display:inline-block;padding:0.18rem 0.6rem;border-radius:999px;font-size:0.6rem;font-family:var(--font-mono);letter-spacing:0.06em;background:rgba(96,165,250,0.12);color:#60a5fa;font-weight:500;border:1px solid rgba(96,165,250,0.2);}
+.td-expand-btn{
+  font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:#60a5fa;background:rgba(96,165,250,0.1);border:1px solid rgba(96,165,250,0.25);
+  padding:0.45rem 1.1rem;border-radius:999px;cursor:pointer;
+  transition:background 0.2s,color 0.2s,border-color 0.2s;white-space:nowrap;
+}
+.td-expand-btn:hover,.td-card.open .td-expand-btn{background:#60a5fa;color:#0A0F1E;border-color:#60a5fa;}
+
+/* Right pane — key stats */
+.td-card-right{
+  padding:2.25rem 2rem;
+  display:flex;flex-direction:column;justify-content:center;gap:1.5rem;
+  background:rgba(255,255,255,0.02);
+}
+.td-card-stat{}
+.td-card-stat-num{
+  font-family:var(--font-display);font-size:2rem;font-weight:900;
+  color:#60a5fa;line-height:1;margin-bottom:0.2rem;
+}
+.td-card-stat-label{font-size:0.7rem;font-family:var(--font-mono);letter-spacing:0.07em;color:#475569;text-transform:uppercase;line-height:1.4;}
+.td-card-divider{height:1px;background:rgba(255,255,255,0.06);margin:0;}
+
+/* Expandable body */
+.td-card-body{max-height:0;overflow:hidden;transition:max-height 0.8s cubic-bezier(0.4,0,0.2,1);}
 .td-card.open .td-card-body{max-height:9000px;}
-.td-inner{background:#0A0F1E;padding:3rem 2.25rem 3.5rem;}
+.td-inner{background:#0A0F1E;padding:3rem 2.5rem 3.5rem;border-top:1px solid rgba(255,255,255,0.06);}
 
 </style>
 </head>
@@ -906,7 +956,6 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
       </p>
       <div class="hero-cta">
         <a href="#work-section" class="btn-primary">See My Work →</a>
-        <a href="https://topmate.io/raghav_punj/" target="_blank" rel="noopener" class="btn-outline">Let's Talk</a>
       </div>
     </div>
 
@@ -1240,17 +1289,43 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
   <!-- Teardown card 1 -->
   <div class="td-card" id="td-card-1">
     <div class="td-card-header" onclick="toggleTeardown('td-card-1')">
-      <div class="td-card-meta">
-        <span class="td-card-tag">Agentic Commerce · Protocol War · Trust</span>
-        <span class="td-card-date">June 2026</span>
+      <!-- Left pane -->
+      <div class="td-card-left">
+        <div>
+          <div class="td-card-meta">
+            <span class="td-card-tag">Agentic Commerce · Protocol War · Trust</span>
+            <span class="td-card-date">June 2026</span>
+            <span class="td-card-read">· 8 min read</span>
+          </div>
+          <h3 class="td-card-title">The $5 trillion bet<br>nobody trusts.</h3>
+          <p class="td-card-desc">Agents can now spend your money for real — yet only 30% of consumers will let them. A teardown of ChatGPT Checkout, Google "Buy for me", Perplexity Comet and the protocol war underneath.</p>
+        </div>
+        <div class="td-card-footer-row">
+          <span class="td-card-chips">
+            <span class="td-chip-sm">OpenAI · Stripe</span>
+            <span class="td-chip-sm">Google UCP</span>
+            <span class="td-chip-sm">Perplexity</span>
+            <span class="td-chip-sm">Amazon</span>
+          </span>
+          <button class="td-expand-btn" id="td-btn-1">Read Teardown ↓</button>
+        </div>
       </div>
-      <div class="td-card-main">
-        <h3 class="td-card-title">The $5 trillion bet nobody trusts.</h3>
-        <p class="td-card-desc">Agents can now spend your money for real — yet only 30% of consumers will let them. A teardown of ChatGPT Checkout, Google "Buy for me", Perplexity Comet and the protocol war underneath.</p>
-      </div>
-      <div class="td-card-footer">
-        <span class="td-card-chips"><span class="td-chip-sm">OpenAI · Stripe</span><span class="td-chip-sm">Google UCP</span><span class="td-chip-sm">Perplexity</span><span class="td-chip-sm">Amazon</span></span>
-        <button class="td-expand-btn" id="td-btn-1">Read Teardown ↓</button>
+      <!-- Right pane — stats -->
+      <div class="td-card-right">
+        <div class="td-card-stat">
+          <div class="td-card-stat-num">$3–5T</div>
+          <div class="td-card-stat-label">Agent-orchestrated spend by 2030</div>
+        </div>
+        <hr class="td-card-divider">
+        <div class="td-card-stat">
+          <div class="td-card-stat-num">30%</div>
+          <div class="td-card-stat-label">Consumers who'll let AI buy for them</div>
+        </div>
+        <hr class="td-card-divider">
+        <div class="td-card-stat">
+          <div class="td-card-stat-num">4</div>
+          <div class="td-card-stat-label">Competing payment protocols at war</div>
+        </div>
       </div>
     </div>
     <div class="td-card-body" id="td-body-1">
@@ -1405,16 +1480,13 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
   <p class="td-table-title" style="margin-bottom:1rem;">What I'd build next</p>
   <div class="td-bets">
     <div class="td-bet">
-      <div class="td-bet-icon">🔐</div>
-      <div><h4>A "trust passport" — portable agent permissions</h4><p>A user-controlled credential that travels across agents: spend cap, category whitelist, merchant allow-list. One consent event, works everywhere — like OAuth scopes for buying.</p></div>
+      <div><h4>Product: Universal Agent Permissions Layer ("Trust Passport")</h4><p>A user-controlled credential — spend cap, category whitelist, merchant allow-list — that travels across any agent (ChatGPT, Gemini, Comet). One consent event, works everywhere. Think OAuth scopes, but for buying.</p></div>
     </div>
     <div class="td-bet">
-      <div class="td-bet-icon">📊</div>
-      <div><h4>Agent performance dashboard for consumers</h4><p>Show users a real accuracy score for their agent: "Your agent recommended 47 items this month; you confirmed 38, returned 2." Makes trust legible, accelerates ladder progression.</p></div>
+      <div><h4>Product: Agent Accuracy Dashboard (inside ChatGPT / Gemini settings)</h4><p>Show users a real accuracy score: "Your agent recommended 47 items this month — you confirmed 38, returned 2." Makes trust legible and accelerates progression up the autonomy ladder.</p></div>
     </div>
     <div class="td-bet">
-      <div class="td-bet-icon">⚖️</div>
-      <div><h4>Liability-as-a-feature</h4><p>First platform to offer a "buy-back guarantee" on AI-assisted purchases (agent bought wrong item → platform covers the return) wins enterprise and cautious-consumer trust in one shot.</p></div>
+      <div><h4>Product: AI Purchase Protection (Stripe / PayPal layer)</h4><p>First payments platform to guarantee AI-assisted purchases — agent bought wrong item → platform covers the return. Whoever ships this owns the cautious-consumer and enterprise segments in one move.</p></div>
     </div>
   </div>
 
