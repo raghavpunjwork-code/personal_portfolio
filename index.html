@@ -911,6 +911,36 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
 .td-card.open .td-card-body{max-height:9000px;}
 .td-inner{background:#0A0F1E;padding:3rem 2.5rem 3.5rem;border-top:1px solid rgba(255,255,255,0.06);}
 
+
+/* ── PROJECT TILE (square) ──────────────────────────────────────────────── */
+.project-tile{
+  display:flex;flex-direction:column;gap:0.75rem;
+  width:300px;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:1.75rem;
+  text-decoration:none;
+  color:var(--ink);
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  transition:transform 0.25s ease,box-shadow 0.25s ease,border-color 0.25s ease;
+  border-top:3px solid #ea580c;
+}
+.project-tile:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(29,78,216,0.12);border-color:var(--pop);}
+.project-tile-top{display:flex;justify-content:space-between;align-items:center;}
+.project-tile-index{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);}
+.project-tile-arrow{font-size:1.1rem;color:var(--pop);transition:transform 0.2s;}
+.project-tile:hover .project-tile-arrow{transform:translate(2px,-2px);}
+.project-tile-title{font-family:var(--font-display);font-size:1.4rem;font-weight:900;line-height:1.1;letter-spacing:-0.02em;color:var(--ink);}
+.project-tile-title em{color:var(--ink-muted);font-style:italic;font-weight:300;}
+.project-tile-desc{font-size:0.78rem;color:var(--ink-mid);line-height:1.6;}
+.project-tile-tags{display:flex;flex-wrap:wrap;gap:0.35rem;}
+.project-tile-stat{margin-top:auto;padding-top:0.75rem;border-top:1px solid var(--border);}
+.project-tile-num{font-family:var(--font-display);font-size:1.6rem;font-weight:900;color:#ea580c;line-height:1;}
+.project-tile-unit{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-top:0.15rem;}
+
 </style>
 </head>
 <body>
@@ -1191,35 +1221,23 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
   <div class="projects-list">
 
     <!-- 01 -->
-    <!-- 02 -->
-    <!-- 03 -->
-    <div class="project-card reveal reveal-d3">
-      <div class="project-stripe coral"></div>
-      <div class="project-inner">
-        <div class="project-left">
-          <p class="project-index">01 · Personal Project</p>
-          <h3 class="project-title">PortfolioIQ — Stock Screener</h3>
-          <p class="project-desc">Built a full-stack stock screening tool that filters equities using fundamental and technical criteria. Pulls live market data, runs custom scoring logic, and surfaces actionable buy/watch signals — turning raw financial data into investment decisions.</p>
-          <div class="project-tags">
-            <span class="project-tag">Python</span>
-            <span class="project-tag">Financial Data</span>
-            <span class="project-tag">Data Analysis</span>
-            <span class="project-tag">Algorithmic Screening</span>
-          </div>
-          <a href="https://raghavpunjwork-code.github.io/stock-screener/" target="_blank" class="project-arrow" style="margin-top:0.7rem;display:inline-flex;align-items:center;gap:0.4rem;font-family:var(--font-mono);font-size:0.7rem;color:var(--pop);text-decoration:none;transition:gap 0.2s;">View on GitHub ↗</a>
-        </div>
-        <div class="project-right">
-          <div class="project-stat">
-            <p class="project-stat-val coral">500+</p>
-            <p class="project-stat-label">stocks screened</p>
-          </div>
-          <div class="project-stat">
-            <p class="project-stat-sub">Real-time</p>
-            <p class="project-stat-label">market data</p>
-          </div>
-        </div>
+    <a href="https://raghavpunjwork-code.github.io/stock-screener/" target="_blank" class="project-tile reveal reveal-d1">
+      <div class="project-tile-top">
+        <p class="project-tile-index">Personal Project</p>
+        <span class="project-tile-arrow">↗</span>
       </div>
-    </div>
+      <h3 class="project-tile-title">PortfolioIQ<br><em>Stock Screener</em></h3>
+      <p class="project-tile-desc">Full-stack equity screener — live market data, custom scoring, buy/watch signals.</p>
+      <div class="project-tile-tags">
+        <span class="project-tag">Python</span>
+        <span class="project-tag">Financial Data</span>
+        <span class="project-tag">Algo Screening</span>
+      </div>
+      <div class="project-tile-stat">
+        <span class="project-tile-num">500+</span>
+        <span class="project-tile-unit">stocks screened</span>
+      </div>
+    </a>
 
   </div>
 </div>
