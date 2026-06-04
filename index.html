@@ -759,6 +759,85 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
 [data-company="diageo"]:hover{border-color:rgba(180,20,20,0.3);}
 [data-company="target"]:hover{border-color:rgba(204,0,0,0.3);}
 [data-company="deloitte"]:hover{border-color:rgba(134,188,37,0.4);}
+
+/* ── TEARDOWN SECTION ───────────────────────────────────────────────── */
+#teardown-section{background:#0A0F1E;color:#E8EDF8;}
+#teardown-section .section-label{color:#60a5fa;}
+#teardown-section .section-label::before{background:#60a5fa;}
+.td-wrap{max-width:1300px;margin:0 auto;padding:4rem 4rem 5rem;}
+.td-kicker{font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:#60a5fa;margin-bottom:0.75rem;}
+.td-headline{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;color:#F0F4FF;margin-bottom:0.5rem;}
+.td-headline em{color:#60a5fa;font-style:italic;}
+.td-subhead{font-size:1rem;color:#94a3b8;line-height:1.65;max-width:640px;margin-bottom:3rem;}
+
+/* Stat row */
+.td-stats{display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:3.5rem;padding:1.5rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:16px;}
+.td-stat{flex:1;min-width:140px;}
+.td-stat-num{font-family:var(--font-display);font-size:2rem;font-weight:900;color:#60a5fa;line-height:1;}
+.td-stat-label{font-size:0.72rem;font-family:var(--font-mono);letter-spacing:0.07em;color:#64748b;text-transform:uppercase;margin-top:0.3rem;}
+
+/* Body prose */
+.td-body{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-bottom:3.5rem;}
+@media(max-width:860px){.td-body{grid-template-columns:1fr;}}
+.td-prose h3{font-family:var(--font-display);font-size:1.25rem;font-weight:700;color:#F0F4FF;margin-bottom:0.7rem;}
+.td-prose p{font-size:0.88rem;color:#94a3b8;line-height:1.75;margin-bottom:0.9rem;}
+.td-prose strong{color:#cbd5e1;}
+
+/* Confirm button table */
+.td-table-wrap{margin-bottom:3.5rem;overflow-x:auto;}
+.td-table-title{font-family:var(--font-display);font-size:1.25rem;font-weight:700;color:#F0F4FF;margin-bottom:1rem;}
+.td-table{width:100%;border-collapse:collapse;font-size:0.82rem;}
+.td-table th{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:#475569;padding:0.6rem 1rem;text-align:left;border-bottom:1px solid rgba(255,255,255,0.06);}
+.td-table td{padding:0.85rem 1rem;border-bottom:1px solid rgba(255,255,255,0.04);color:#94a3b8;vertical-align:top;}
+.td-table tr:hover td{background:rgba(255,255,255,0.03);}
+.td-table td:first-child{font-weight:600;color:#e2e8f0;white-space:nowrap;}
+.td-chip{display:inline-block;padding:0.2rem 0.6rem;border-radius:999px;font-size:0.65rem;font-family:var(--font-mono);letter-spacing:0.06em;font-weight:600;}
+.td-chip.high{background:rgba(34,197,94,0.15);color:#4ade80;}
+.td-chip.mid{background:rgba(251,191,36,0.15);color:#fbbf24;}
+.td-chip.low{background:rgba(239,68,68,0.15);color:#f87171;}
+
+/* Trust ladder */
+.td-ladder{margin-bottom:3.5rem;}
+.td-ladder-title{font-family:var(--font-display);font-size:1.25rem;font-weight:700;color:#F0F4FF;margin-bottom:1.2rem;}
+.td-ladder-steps{display:flex;flex-direction:column;gap:0;}
+.td-step{display:flex;gap:1.25rem;align-items:flex-start;padding:1rem 1.2rem;border-left:2px solid rgba(255,255,255,0.07);position:relative;transition:border-color 0.2s;}
+.td-step:hover{border-left-color:#60a5fa;background:rgba(96,165,250,0.04);border-radius:0 8px 8px 0;}
+.td-step-num{font-family:var(--font-display);font-size:1.6rem;font-weight:900;color:#1e3a5f;line-height:1;flex-shrink:0;width:2rem;text-align:center;}
+.td-step-body h4{font-size:0.88rem;font-weight:600;color:#e2e8f0;margin-bottom:0.2rem;}
+.td-step-body p{font-size:0.78rem;color:#64748b;line-height:1.6;}
+
+/* Metrics grid */
+.td-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:3.5rem;}
+@media(max-width:720px){.td-metrics{grid-template-columns:1fr 1fr;}}
+.td-metric-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:1.1rem 1.25rem;}
+.td-metric-card h4{font-size:0.75rem;font-family:var(--font-mono);letter-spacing:0.08em;color:#60a5fa;text-transform:uppercase;margin-bottom:0.4rem;}
+.td-metric-card p{font-size:0.8rem;color:#94a3b8;line-height:1.55;}
+
+/* PM POV callout */
+.td-pov{background:linear-gradient(135deg,rgba(29,78,216,0.18),rgba(96,165,250,0.08));border:1px solid rgba(96,165,250,0.2);border-radius:16px;padding:2rem 2.25rem;margin-bottom:3.5rem;}
+.td-pov-label{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:#60a5fa;margin-bottom:0.6rem;}
+.td-pov p{font-size:0.95rem;color:#cbd5e1;line-height:1.75;}
+.td-pov strong{color:#93c5fd;}
+
+/* Risks */
+.td-risks{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:3.5rem;}
+@media(max-width:700px){.td-risks{grid-template-columns:1fr;}}
+.td-risk-card{border:1px solid rgba(239,68,68,0.15);border-radius:12px;padding:1.1rem 1.25rem;background:rgba(239,68,68,0.04);}
+.td-risk-card h4{font-size:0.78rem;font-weight:600;color:#fca5a5;margin-bottom:0.35rem;}
+.td-risk-card p{font-size:0.78rem;color:#94a3b8;line-height:1.55;}
+
+/* Bets */
+.td-bets{display:flex;flex-direction:column;gap:0.75rem;margin-bottom:3rem;}
+.td-bet{display:flex;gap:1rem;align-items:flex-start;padding:1rem 1.25rem;border:1px solid rgba(255,255,255,0.06);border-radius:12px;background:rgba(255,255,255,0.03);}
+.td-bet-icon{font-size:1.1rem;flex-shrink:0;margin-top:0.1rem;}
+.td-bet h4{font-size:0.85rem;font-weight:600;color:#e2e8f0;margin-bottom:0.2rem;}
+.td-bet p{font-size:0.78rem;color:#64748b;line-height:1.55;}
+
+/* Closing line */
+.td-close{border-top:1px solid rgba(255,255,255,0.07);padding-top:2rem;}
+.td-close p{font-family:var(--font-display);font-size:1.35rem;font-style:italic;font-weight:300;color:#94a3b8;line-height:1.6;max-width:700px;}
+.td-close strong{color:#F0F4FF;font-style:normal;font-weight:700;}
+
 </style>
 </head>
 <body>
@@ -771,6 +850,7 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
     <li><a href="#work-section">Experience</a></li>
     <li><a href="#skills-section">Skills</a></li>
     <li><a href="#projects-section">Projects</a></li>
+    <li><a href="#teardown-section">Teardown</a></li>
     <li><a href="#edu-section">Education</a></li>
     <li><a href="#social-section">Connect</a></li>
   </ul>
@@ -1122,6 +1202,179 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
     </div>
 
   </div>
+</div>
+</div>
+
+<!-- TEARDOWN -->
+<div id="teardown-section">
+<div class="td-wrap reveal">
+
+  <p class="td-kicker">Product Teardown · Agentic Commerce</p>
+  <h2 class="td-headline">The <em>$5 trillion bet</em><br>nobody trusts.</h2>
+  <p class="td-subhead">Agents can now spend your money for real. OpenAI, Google, Perplexity and Amazon are racing to own the checkout moment — yet only 30% of consumers will let an AI complete a purchase. The whole industry is building infrastructure for a behaviour most people refuse.</p>
+
+  <!-- Stats -->
+  <div class="td-stats">
+    <div class="td-stat">
+      <div class="td-stat-num">$3–5T</div>
+      <div class="td-stat-label">Agent-orchestrated spend by 2030 — McKinsey</div>
+    </div>
+    <div class="td-stat">
+      <div class="td-stat-num">30%</div>
+      <div class="td-stat-label">Consumers willing to let AI complete a purchase — Contentsquare 2025</div>
+    </div>
+    <div class="td-stat">
+      <div class="td-stat-num">75%</div>
+      <div class="td-stat-label">Would trust AI shopping less if results were sponsored — April 2026</div>
+    </div>
+    <div class="td-stat">
+      <div class="td-stat-num">4</div>
+      <div class="td-stat-label">Competing payment protocols — ACP, UCP, AP2 &amp; x402</div>
+    </div>
+  </div>
+
+  <!-- What is / Why now -->
+  <div class="td-body">
+    <div class="td-prose">
+      <h3>What is agentic commerce?</h3>
+      <p>Agentic commerce is when an AI — not a human — navigates product discovery, comparison, cart and checkout end-to-end. The agent acts as a proxy buyer: it holds your payment credentials, interprets your intent, negotiates the purchase, and confirms it (or doesn't, depending on how much rope you give it).</p>
+      <p>The enabling layer is a new class of <strong>machine-readable commerce protocols</strong> — structured APIs that let any agent plug into any retailer without scraping HTML or impersonating a browser. Think OAuth for buying.</p>
+    </div>
+    <div class="td-prose">
+      <h3>Why is 2025–26 the inflection?</h3>
+      <p>Three forces converged: <strong>LLMs got tool-use</strong> (agents can now call APIs, not just generate text); <strong>Stripe shipped a shared payment token</strong> (SPT) so credentials never leave the vault; and <strong>retailers finally opened structured APIs</strong> rather than watch their traffic get scraped by Perplexity — a lesson Amazon learned the hard way when a federal court had to block Comet's bot in March 2026.</p>
+      <p>The protocol war is the tells-you-everything detail: four standards (ACP, UCP, AP2, x402) fighting for the routing layer means the plumbing isn't settled — and whoever owns the handshake owns the margin.</p>
+    </div>
+  </div>
+
+  <!-- Confirm button teardown table -->
+  <div class="td-table-wrap">
+    <p class="td-table-title">The "confirm button" teardown — where does each product place the human?</p>
+    <table class="td-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Autonomy model</th>
+          <th>Human confirm step</th>
+          <th>Protocol</th>
+          <th>Trust read</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ChatGPT Instant Checkout</td>
+          <td>Recommend → inline checkout</td>
+          <td>User confirms every step; single-item only at launch</td>
+          <td>ACP (OpenAI + Stripe)</td>
+          <td><span class="td-chip high">Conservative ✓</span></td>
+        </tr>
+        <tr>
+          <td>Google "Buy for me"</td>
+          <td>Price-track → notify → buy</td>
+          <td>Pre-set preferences; "Buy for me" button triggers purchase</td>
+          <td>UCP (Google + 20 retailers)</td>
+          <td><span class="td-chip mid">Semi-auto</span></td>
+        </tr>
+        <tr>
+          <td>Perplexity Comet</td>
+          <td>Full browser agent</td>
+          <td>Minimal — agent navigates &amp; checks out end-to-end</td>
+          <td>None (scraping) → blocked by Amazon injunction Mar 2026</td>
+          <td><span class="td-chip low">Overreached ✗</span></td>
+        </tr>
+        <tr>
+          <td>Amazon Rufus</td>
+          <td>Discovery + recommendation only</td>
+          <td>Full — human still clicks Buy on Amazon</td>
+          <td>Proprietary (walled garden)</td>
+          <td><span class="td-chip high">Safe harbour</span></td>
+        </tr>
+        <tr>
+          <td>Walmart Sparky</td>
+          <td>Conversational cart-building</td>
+          <td>Human reviews cart; 35% larger baskets via UCP</td>
+          <td>UCP</td>
+          <td><span class="td-chip mid">Open &amp; winning</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PM POV -->
+  <div class="td-pov">
+    <p class="td-pov-label">PM POV — the trust ladder</p>
+    <p>Every product above is implicitly solving the same equation: <strong>how much autonomy do I grant before I lose the user?</strong> ChatGPT gets it closest to right — confirm every purchase, one item at a time, earn the rep, then expand the rope. Perplexity went the opposite direction and got a court order for it. The framework I'd use is a <strong>progressive autonomy ladder</strong>: start at read-only (compare prices), earn trust through accuracy, unlock cart-build, then confirm-to-buy, then fully autonomous within guardrails (spend cap, category whitelist, merchant allowlist). You don't jump rungs. Each rung requires a new explicit consent event — not a buried settings toggle.</p>
+  </div>
+
+  <!-- Trust ladder steps -->
+  <div class="td-ladder">
+    <p class="td-ladder-title">The progressive autonomy ladder</p>
+    <div class="td-ladder-steps">
+      <div class="td-step">
+        <div class="td-step-num">1</div>
+        <div class="td-step-body"><h4>Read-only discovery</h4><p>Agent searches, compares, summarises. No payment access. 65% of consumers already comfortable here.</p></div>
+      </div>
+      <div class="td-step">
+        <div class="td-step-num">2</div>
+        <div class="td-step-body"><h4>Cart-build + notify</h4><p>Agent populates cart, sends notification. Human reviews and clicks buy. Google's current model.</p></div>
+      </div>
+      <div class="td-step">
+        <div class="td-step-num">3</div>
+        <div class="td-step-body"><h4>Confirm-to-buy</h4><p>Agent reaches checkout, surfaces a single confirm screen. One tap = done. ChatGPT's model — the current trust frontier.</p></div>
+      </div>
+      <div class="td-step">
+        <div class="td-step-num">4</div>
+        <div class="td-step-body"><h4>Autonomous within guardrails</h4><p>Agent buys freely within explicit user-set rules: spend cap, category, merchant allow-list. Explicit opt-in required. No product is here yet.</p></div>
+      </div>
+      <div class="td-step">
+        <div class="td-step-num">5</div>
+        <div class="td-step-body"><h4>Fully autonomous</h4><p>Agent manages replenishment and discretionary spend end-to-end. The $5T endgame. Unlocks only after rung 4 has years of clean history.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Metrics I'd track -->
+  <p class="td-table-title" style="margin-bottom:1rem;">Metrics I'd track</p>
+  <div class="td-metrics">
+    <div class="td-metric-card"><h4>Confirm rate</h4><p>% of agent-initiated checkouts confirmed by the user — primary signal of intent accuracy.</p></div>
+    <div class="td-metric-card"><h4>Abandon-at-confirm</h4><p>Where users bail. High abandon = confirm screen is wrong (wrong item, price, timing).</p></div>
+    <div class="td-metric-card"><h4>Post-purchase dispute rate</h4><p>AI-assisted purchases that trigger returns or chargebacks — the liability signal.</p></div>
+    <div class="td-metric-card"><h4>Trust ladder progression</h4><p>% of users who voluntarily unlock the next rung after 30 / 90 / 180 days.</p></div>
+    <div class="td-metric-card"><h4>Protocol share</h4><p>% of transactions routed via ACP vs UCP vs x402 — tells you who's winning the plumbing war.</p></div>
+    <div class="td-metric-card"><h4>Conversion vs. organic</h4><p>Agent-assisted conversion rate vs. direct. If it trails organic (U Chicago finding), the UX isn't earning trust yet.</p></div>
+  </div>
+
+  <!-- Risks -->
+  <p class="td-table-title" style="margin-bottom:1rem;">Risks &amp; what's broken</p>
+  <div class="td-risks">
+    <div class="td-risk-card"><h4>Rogue agent / liability gap</h4><p>Who pays when an agent buys the wrong thing — or at 10× the intended price? No clear legal framework yet. The $1-car chatbot precedent (car dealer chatbot locked into a sale price) will scale badly.</p></div>
+    <div class="td-risk-card"><h4>Sponsored results erode trust</h4><p>75% of Americans say they'd trust AI shopping less if results were sponsored. The moment agents take affiliate fees invisibly, the trust ladder collapses to rung zero.</p></div>
+    <div class="td-risk-card"><h4>Protocol fragmentation</h4><p>Four competing standards means merchants must integrate 4× and consumers get inconsistent confirm UX depending on which agent they use — classic standards war slowdown.</p></div>
+    <div class="td-risk-card"><h4>Walled gardens vs. open web</h4><p>Amazon's legal win against Comet signals incumbents will fight the open-web agent model. If every retailer builds a moat, UCP/ACP become toll roads, not open standards.</p></div>
+  </div>
+
+  <!-- Bets -->
+  <p class="td-table-title" style="margin-bottom:1rem;">What I'd build next</p>
+  <div class="td-bets">
+    <div class="td-bet">
+      <div class="td-bet-icon">🔐</div>
+      <div><h4>A "trust passport" — portable agent permissions</h4><p>A user-controlled credential that travels across agents: spend cap, category whitelist, merchant allow-list. One consent event, works everywhere — like OAuth scopes for buying.</p></div>
+    </div>
+    <div class="td-bet">
+      <div class="td-bet-icon">📊</div>
+      <div><h4>Agent performance dashboard for consumers</h4><p>Show users a real accuracy score for their agent: "Your agent recommended 47 items this month; you confirmed 38, returned 2." Makes trust legible, accelerates ladder progression.</p></div>
+    </div>
+    <div class="td-bet">
+      <div class="td-bet-icon">⚖️</div>
+      <div><h4>Liability-as-a-feature</h4><p>First platform to offer a "buy-back guarantee" on AI-assisted purchases (agent bought wrong item → platform covers the return) wins enterprise and cautious-consumer trust in one shot.</p></div>
+    </div>
+  </div>
+
+  <!-- Closing -->
+  <div class="td-close">
+    <p>The infrastructure is real. The protocols are shipping. The money is committed. What's missing is the <strong>one insight every PM on this should tattoo to their monitor:</strong> trust isn't a marketing problem — it's a product surface. Every confirm screen, every post-purchase email, every dispute flow is a rung on the ladder. The teams that design those interactions like they matter will own the $5 trillion. The ones that bury the confirm button will get Comet'd.</p>
+  </div>
+
 </div>
 </div>
 
