@@ -907,7 +907,7 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
 .td-card-divider{height:1px;background:rgba(255,255,255,0.06);margin:0;}
 
 /* Expandable body */
-.td-card-body{max-height:0;overflow:hidden;transition:max-height 0.8s cubic-bezier(0.4,0,0.2,1);}
+.td-card-body{max-height:0;overflow:hidden;transition:max-height 1s cubic-bezier(0.16,1,0.3,1);}
 .td-card.open .td-card-body{max-height:9000px;}
 .td-inner{background:#0A0F1E;padding:3rem 2.5rem 3.5rem;border-top:1px solid rgba(255,255,255,0.06);}
 
@@ -940,6 +940,88 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
 .project-tile-stat{margin-top:auto;padding-top:0.75rem;border-top:1px solid var(--border);}
 .project-tile-num{font-family:var(--font-display);font-size:1.6rem;font-weight:900;color:#ea580c;line-height:1;}
 .project-tile-unit{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-top:0.15rem;}
+
+
+/* ── TEARDOWN DRAMATIC EXPAND ───────────────────────────────────────────── */
+@keyframes tdRevealUp{
+  from{opacity:0;transform:translateY(28px);}
+  to{opacity:1;transform:translateY(0);}
+}
+@keyframes tdRevealFade{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+@keyframes tdLineGrow{
+  from{transform:scaleX(0);}
+  to{transform:scaleX(1);}
+}
+@keyframes tdCardPulse{
+  0%{box-shadow:0 0 0 0 rgba(96,165,250,0.4);}
+  50%{box-shadow:0 0 0 14px rgba(96,165,250,0);}
+  100%{box-shadow:0 0 0 0 rgba(96,165,250,0);}
+}
+
+/* Opening pulse on the card */
+.td-card.open{
+  animation:tdCardPulse 0.6s ease forwards;
+}
+
+/* Animated top border sweep on open */
+.td-card::after{
+  content:'';
+  position:absolute;top:0;left:0;right:0;
+  height:2px;
+  background:linear-gradient(90deg,#60a5fa,#818cf8,#60a5fa);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 0.6s cubic-bezier(0.16,1,0.3,1);
+  z-index:2;
+}
+.td-card.open::after{transform:scaleX(1);}
+
+/* Stagger inner sections */
+.td-card.open .td-kicker{animation:tdRevealUp 0.45s 0.05s ease both;}
+.td-card.open .td-headline{animation:tdRevealUp 0.5s 0.1s ease both;}
+.td-card.open .td-subhead{animation:tdRevealUp 0.5s 0.18s ease both;}
+.td-card.open .td-stats{animation:tdRevealUp 0.5s 0.25s ease both;}
+.td-card.open .td-body{animation:tdRevealUp 0.5s 0.32s ease both;}
+.td-card.open .td-table-wrap{animation:tdRevealUp 0.5s 0.38s ease both;}
+.td-card.open .td-pov{animation:tdRevealUp 0.5s 0.44s ease both;}
+.td-card.open .td-ladder{animation:tdRevealUp 0.5s 0.5s ease both;}
+.td-card.open .td-metrics{animation:tdRevealUp 0.5s 0.56s ease both;}
+.td-card.open .td-risks{animation:tdRevealUp 0.5s 0.62s ease both;}
+.td-card.open .td-bets{animation:tdRevealUp 0.5s 0.68s ease both;}
+.td-card.open .td-close{animation:tdRevealFade 0.6s 0.75s ease both;}
+
+/* Ladder steps stagger */
+.td-card.open .td-step:nth-child(1){animation:tdRevealUp 0.4s 0.55s ease both;}
+.td-card.open .td-step:nth-child(2){animation:tdRevealUp 0.4s 0.62s ease both;}
+.td-card.open .td-step:nth-child(3){animation:tdRevealUp 0.4s 0.69s ease both;}
+.td-card.open .td-step:nth-child(4){animation:tdRevealUp 0.4s 0.76s ease both;}
+.td-card.open .td-step:nth-child(5){animation:tdRevealUp 0.4s 0.83s ease both;}
+
+/* Metric cards stagger */
+.td-card.open .td-metric-card:nth-child(1){animation:tdRevealUp 0.4s 0.6s ease both;}
+.td-card.open .td-metric-card:nth-child(2){animation:tdRevealUp 0.4s 0.67s ease both;}
+.td-card.open .td-metric-card:nth-child(3){animation:tdRevealUp 0.4s 0.74s ease both;}
+.td-card.open .td-metric-card:nth-child(4){animation:tdRevealUp 0.4s 0.81s ease both;}
+.td-card.open .td-metric-card:nth-child(5){animation:tdRevealUp 0.4s 0.88s ease both;}
+.td-card.open .td-metric-card:nth-child(6){animation:tdRevealUp 0.4s 0.95s ease both;}
+
+/* Table rows stagger */
+.td-card.open .td-table tbody tr:nth-child(1){animation:tdRevealUp 0.35s 0.42s ease both;}
+.td-card.open .td-table tbody tr:nth-child(2){animation:tdRevealUp 0.35s 0.49s ease both;}
+.td-card.open .td-table tbody tr:nth-child(3){animation:tdRevealUp 0.35s 0.56s ease both;}
+.td-card.open .td-table tbody tr:nth-child(4){animation:tdRevealUp 0.35s 0.63s ease both;}
+.td-card.open .td-table tbody tr:nth-child(5){animation:tdRevealUp 0.35s 0.70s ease both;}
+
+/* Stat numbers count-up feel */
+@keyframes tdStatPop{
+  0%{transform:scale(0.7);opacity:0;}
+  70%{transform:scale(1.08);}
+  100%{transform:scale(1);opacity:1;}
+}
+.td-card.open .td-stat-num{animation:tdStatPop 0.5s 0.28s cubic-bezier(0.34,1.56,0.64,1) both;}
 
 </style>
 </head>
@@ -1669,7 +1751,17 @@ sections.forEach(s=>navObserver.observe(s));
 function toggleTeardown(cardId){
   const card = document.getElementById(cardId);
   const isOpen = card.classList.contains('open');
-  card.classList.toggle('open',!isOpen);
+  // Reset animations by briefly removing + re-adding class
+  if(!isOpen){
+    // Force reflow to restart animations
+    card.classList.remove('open');
+    void card.offsetHeight;
+    card.classList.add('open');
+    // Smooth scroll to card after short delay
+    setTimeout(()=>{ card.scrollIntoView({behavior:'smooth', block:'start'}); }, 120);
+  } else {
+    card.classList.remove('open');
+  }
   const btnId = cardId.replace('td-card','td-btn');
   const btn = document.getElementById(btnId);
   if(btn) btn.textContent = isOpen ? 'Read Teardown ↓' : 'Close ↑';
