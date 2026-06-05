@@ -985,6 +985,7 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
 .td-card.open .td-subhead{animation:tdRevealUp 0.5s 0.18s ease both;}
 .td-card.open .td-stats{animation:tdRevealUp 0.5s 0.25s ease both;}
 .td-card.open .td-body{animation:tdRevealUp 0.5s 0.32s ease both;}
+.td-card.open .td-visuals-row{animation:tdRevealUp 0.5s 0.30s ease both;}
 .td-card.open .td-table-wrap{animation:tdRevealUp 0.5s 0.38s ease both;}
 .td-card.open .td-pov{animation:tdRevealUp 0.5s 0.44s ease both;}
 .td-card.open .td-ladder{animation:tdRevealUp 0.5s 0.5s ease both;}
@@ -1022,6 +1023,58 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
   100%{transform:scale(1);opacity:1;}
 }
 .td-card.open .td-stat-num{animation:tdStatPop 0.5s 0.28s cubic-bezier(0.34,1.56,0.64,1) both;}
+
+
+/* ── INLINE VISUALS ─────────────────────────────────────────────────────── */
+.td-visuals-row{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:3.5rem;}
+@media(max-width:900px){.td-visuals-row{grid-template-columns:1fr;}}
+.td-visual-block{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:1.5rem;}
+.td-vis-label{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:#60a5fa;margin-bottom:1.25rem;}
+
+/* Trust ladder viz */
+.td-ladder-viz{position:relative;padding-left:2rem;}
+.td-lv-line{position:absolute;left:0.5rem;top:0.8rem;bottom:0.8rem;width:2px;background:linear-gradient(to bottom,#4ade80 0%,#60a5fa 50%,#1e3a5f 100%);}
+.td-lv-rung{display:flex;align-items:flex-start;gap:0.75rem;padding:0.75rem 0.5rem 0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.04);position:relative;}
+.td-lv-rung:last-child{border-bottom:none;}
+.td-lv-dot{position:absolute;left:-1.65rem;top:0.9rem;width:12px;height:12px;border-radius:50%;border:2px solid;z-index:1;}
+.td-lv-dot-green{background:#4ade80;border-color:#4ade80;box-shadow:0 0 0 3px rgba(74,222,128,0.2);}
+.td-lv-dot-blue{background:#60a5fa;border-color:#60a5fa;box-shadow:0 0 0 3px rgba(96,165,250,0.2);}
+.td-lv-dot-dim{background:#0A0F1E;border-color:#334155;border-style:dashed;}
+.td-lv-body{flex:1;}
+.td-lv-title{font-size:0.78rem;font-weight:600;color:#e2e8f0;margin-bottom:0.2rem;display:flex;align-items:center;flex-wrap:wrap;gap:0.4rem;}
+.td-lv-badge{font-size:0.55rem;font-family:var(--font-mono);letter-spacing:0.06em;padding:0.1rem 0.45rem;border-radius:999px;font-weight:600;}
+.td-lv-green{background:rgba(74,222,128,0.12);color:#4ade80;border:1px solid rgba(74,222,128,0.25);}
+.td-lv-yellow{background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.2);}
+.td-lv-blue{background:rgba(96,165,250,0.1);color:#60a5fa;border:1px solid rgba(96,165,250,0.2);}
+.td-lv-dim{background:rgba(100,116,139,0.08);color:#475569;border:1px solid rgba(100,116,139,0.15);}
+.td-lv-desc{font-size:0.7rem;color:#64748b;line-height:1.5;margin-bottom:0.3rem;}
+.td-lv-players{display:flex;gap:0.3rem;flex-wrap:wrap;}
+.td-lv-tag{font-size:0.58rem;font-family:var(--font-mono);padding:0.1rem 0.45rem;background:rgba(255,255,255,0.04);border-radius:4px;color:#94a3b8;}
+.td-lv-pct{font-family:var(--font-display);font-size:1.2rem;font-weight:900;color:#4ade80;line-height:1;min-width:2.5rem;text-align:right;padding-top:0.1rem;}
+.td-lv-future .td-lv-title,.td-lv-future .td-lv-desc{color:#334155;}
+.td-lv-future .td-lv-tag{color:#334155;}
+
+/* Protocol grid */
+.td-proto-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
+.td-proto-card{border-radius:10px;padding:0.9rem 1rem;border:1px solid rgba(255,255,255,0.05);background:rgba(255,255,255,0.02);position:relative;overflow:hidden;transition:transform 0.2s,border-color 0.2s;}
+.td-proto-card:hover{transform:translateY(-2px);}
+.td-proto-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.td-proto-acp::before{background:linear-gradient(90deg,#60a5fa,#818cf8);}
+.td-proto-ucp::before{background:linear-gradient(90deg,#4ade80,#60a5fa);}
+.td-proto-ap2::before{background:linear-gradient(90deg,#fb923c,#f43f5e);}
+.td-proto-x402::before{background:linear-gradient(90deg,#a78bfa,#60a5fa);}
+.td-proto-acp:hover{border-color:rgba(96,165,250,0.25);}
+.td-proto-ucp:hover{border-color:rgba(74,222,128,0.25);}
+.td-proto-ap2:hover{border-color:rgba(251,146,60,0.25);}
+.td-proto-x402:hover{border-color:rgba(167,139,250,0.25);}
+.td-proto-name{font-family:var(--font-display);font-size:1rem;font-weight:900;color:#f0f4ff;line-height:1;}
+.td-proto-full{font-size:0.6rem;color:#475569;letter-spacing:0.04em;margin-bottom:0.5rem;}
+.td-proto-backers{font-size:0.68rem;color:#94a3b8;margin-bottom:0.5rem;line-height:1.4;}
+.td-proto-backers strong{color:#cbd5e1;}
+.td-proto-status{font-size:0.56rem;font-family:var(--font-mono);letter-spacing:0.07em;padding:0.12rem 0.5rem;border-radius:999px;display:inline-block;font-weight:600;text-transform:uppercase;}
+.td-proto-live{background:rgba(74,222,128,0.12);color:#4ade80;border:1px solid rgba(74,222,128,0.22);}
+.td-proto-growing{background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.18);}
+.td-proto-note{font-size:0.62rem;color:#475569;margin-top:0.4rem;}
 
 </style>
 </head>
@@ -1418,6 +1471,105 @@ body.dark-mode .theme-toggle-icon{transform:rotate(180deg);}
     </div>
   </div>
 
+  <!-- VISUAL: Trust Ladder + Protocol War -->
+  <div class="td-visuals-row">
+
+    <!-- Trust Ladder -->
+    <div class="td-visual-block">
+      <p class="td-vis-label">— The progressive autonomy ladder</p>
+      <div class="td-ladder-viz">
+        <div class="td-lv-line"></div>
+
+        <div class="td-lv-rung td-lv-active">
+          <div class="td-lv-dot td-lv-dot-green"></div>
+          <div class="td-lv-body">
+            <div class="td-lv-title">Read-only discovery <span class="td-lv-badge td-lv-green">65% comfortable</span></div>
+            <div class="td-lv-desc">Agent searches &amp; compares. No payment access.</div>
+            <div class="td-lv-players"><span class="td-lv-tag">All products ✓</span></div>
+          </div>
+          <div class="td-lv-pct">65%</div>
+        </div>
+
+        <div class="td-lv-rung td-lv-active">
+          <div class="td-lv-dot td-lv-dot-green"></div>
+          <div class="td-lv-body">
+            <div class="td-lv-title">Cart-build + notify <span class="td-lv-badge td-lv-yellow">partial</span></div>
+            <div class="td-lv-desc">Agent builds cart, human clicks buy.</div>
+            <div class="td-lv-players"><span class="td-lv-tag">Google</span><span class="td-lv-tag">Walmart Sparky</span></div>
+          </div>
+          <div class="td-lv-pct">42%</div>
+        </div>
+
+        <div class="td-lv-rung td-lv-active">
+          <div class="td-lv-dot td-lv-dot-blue"></div>
+          <div class="td-lv-body">
+            <div class="td-lv-title">Confirm-to-buy <span class="td-lv-badge td-lv-blue">frontier</span></div>
+            <div class="td-lv-desc">One confirm screen. The trust frontier today.</div>
+            <div class="td-lv-players"><span class="td-lv-tag">ChatGPT ✓</span><span class="td-lv-tag">Amazon Rufus</span></div>
+          </div>
+          <div class="td-lv-pct" style="color:#60a5fa;">30%</div>
+        </div>
+
+        <div class="td-lv-rung td-lv-future">
+          <div class="td-lv-dot td-lv-dot-dim"></div>
+          <div class="td-lv-body">
+            <div class="td-lv-title">Autonomous within guardrails <span class="td-lv-badge td-lv-dim">no product yet</span></div>
+            <div class="td-lv-desc">Agent buys within spend cap + allow-list.</div>
+            <div class="td-lv-players"><span class="td-lv-tag">—</span></div>
+          </div>
+          <div class="td-lv-pct" style="color:#1e3a5f;">~12%</div>
+        </div>
+
+        <div class="td-lv-rung td-lv-future">
+          <div class="td-lv-dot td-lv-dot-dim"></div>
+          <div class="td-lv-body">
+            <div class="td-lv-title">Fully autonomous <span class="td-lv-badge td-lv-dim">2028+</span></div>
+            <div class="td-lv-desc">Manages all spend end-to-end. The $5T endgame.</div>
+            <div class="td-lv-players"><span class="td-lv-tag">—</span></div>
+          </div>
+          <div class="td-lv-pct" style="color:#1e3a5f;">$5T</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Protocol War -->
+    <div class="td-visual-block">
+      <p class="td-vis-label">— The protocol war: who owns the handshake?</p>
+      <div class="td-proto-grid">
+        <div class="td-proto-card td-proto-acp">
+          <div class="td-proto-name">ACP</div>
+          <div class="td-proto-full">Agentic Commerce Protocol</div>
+          <div class="td-proto-backers"><strong>OpenAI + Stripe</strong> — Etsy, Shopify, Instacart</div>
+          <span class="td-proto-status td-proto-live">Live · Sep 2025</span>
+          <div class="td-proto-note">4% fee · Shared Payment Token</div>
+        </div>
+        <div class="td-proto-card td-proto-ucp">
+          <div class="td-proto-name">UCP</div>
+          <div class="td-proto-full">Universal Commerce Protocol</div>
+          <div class="td-proto-backers"><strong>Google + 60+ orgs</strong> — Walmart, Target, Shopify</div>
+          <span class="td-proto-status td-proto-growing">Growing · Jan 2026</span>
+          <div class="td-proto-note">35% bigger baskets · AI Mode</div>
+        </div>
+        <div class="td-proto-card td-proto-ap2">
+          <div class="td-proto-name">AP2</div>
+          <div class="td-proto-full">Agent Payments Protocol</div>
+          <div class="td-proto-backers"><strong>Google + Coinbase</strong> — stablecoin rail</div>
+          <span class="td-proto-status td-proto-growing">Growing · 2025</span>
+          <div class="td-proto-note">Machine-to-machine payments</div>
+        </div>
+        <div class="td-proto-card td-proto-x402">
+          <div class="td-proto-name">x402</div>
+          <div class="td-proto-full">HTTP 402 Payment Standard</div>
+          <div class="td-proto-backers"><strong>Coinbase</strong> — instant stablecoin, no API keys</div>
+          <span class="td-proto-status td-proto-growing">Live · May 2025</span>
+          <div class="td-proto-note">165M+ agent txns · V2 Dec 2025</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
   <!-- Confirm button teardown table -->
   <div class="td-table-wrap">
     <p class="td-table-title">The "confirm button" teardown — where does each product place the human?</p>
@@ -1733,19 +1885,22 @@ function loop(){
 loop();
 
 
-// NAV ACTIVE STATE
+// NAV ACTIVE STATE — scroll-based, always highlights current section
 const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-const sections = document.querySelectorAll('div[id$="-section"], div[id="edu-section"]');
-const navObserver = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      navLinks.forEach(l=>l.classList.remove('nav-active'));
-      const active = document.querySelector('.nav-links a[href="#'+e.target.id+'"]');
-      if(active) active.classList.add('nav-active');
+function updateActiveNav(){
+  const scrollY = window.scrollY + 120; // offset for fixed nav height
+  let current = null;
+  navLinks.forEach(link=>{
+    const target = document.querySelector(link.getAttribute('href'));
+    if(target && target.offsetTop <= scrollY){
+      current = link;
     }
   });
-},{threshold:0.3});
-sections.forEach(s=>navObserver.observe(s));
+  navLinks.forEach(l=>l.classList.remove('nav-active'));
+  if(current) current.classList.add('nav-active');
+}
+window.addEventListener('scroll', updateActiveNav, {passive:true});
+updateActiveNav();
 
 // TEARDOWN EXPAND
 function toggleTeardown(cardId){
